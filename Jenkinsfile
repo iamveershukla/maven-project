@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    tools { 
+        maven 'Maven 3.0.5' 
+        jdk 'jdk8' 
+    }
     
     parameters { 
          string(name: 'tomcat_staging', defaultValue: 'http://localhost:8090', description: 'Staging Server')
