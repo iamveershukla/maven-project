@@ -21,7 +21,8 @@ stages{
                     echo 'Now Archiving...'
                     archiveArtifacts artifacts: '**/target/*.war'
 
-                    junit 'target/surefire-reports/**/*.xml'
+                    // TODO add junit tests
+                    // junit 'target/surefire-reports/**/*.xml'
                 }
             }
         }
