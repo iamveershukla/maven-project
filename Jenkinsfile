@@ -20,7 +20,15 @@ stages{
                 success {
                     echo 'Now Archiving...'
                     archiveArtifacts artifacts: '**/target/*.war'
+
+                    junit 'target/surefire-reports/**/*.xml'
                 }
+            }
+        }
+
+        stage ('Static code analysis'){
+            steps {
+                build job: 'checkstyle'
             }
         }
 
